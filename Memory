@@ -1,0 +1,11 @@
+Start dev server: npm run dev
+Deploy: npm run deploy
+
+📖 Explore Documentation
+https://developers.cloudflare.com/workers
+
+🐛 Report an Issue
+https://github.com/cloudflare/workers-sdk/issues/new/choose
+
+💬 Join our Community
+https://discord.cloudflare.com
