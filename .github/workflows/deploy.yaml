@@ -18,8 +18,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           wranglerVersion: "4.16.1"
-          environment: preview
           preCommands: npx vite build --mode preview
           command: |
+            d1 migrations apply DB --remote --env preview
             deploy
       
