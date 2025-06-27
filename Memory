@@ -9,3 +9,11 @@ https://github.com/cloudflare/workers-sdk/issues/new/choose
 
 💬 Join our Community
 https://discord.cloudflare.com
+
+
+
+Create db:
+npx wrangler d1 create shopping-list-db
+
+execure schema:
+npx wrangler d1 execute shopping-list-db --file=./schema.sql
