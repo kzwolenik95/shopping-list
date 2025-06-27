@@ -20,6 +20,5 @@ jobs:
           wranglerVersion: "4.16.1"
           environment: preview
           command: |
-            d1 migrations apply DB --remote
             deploy
       
