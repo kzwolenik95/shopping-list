@@ -19,4 +19,6 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           wranglerVersion: "4.16.1"
           environment: preview
-          command: d1 migrations apply DB
+          preCommands: d1 migrations apply DB --remote
+          command: deploy
+      
