@@ -56,7 +56,7 @@
 			],
 			"routes": [
 				{
-					"pattern": "shopping-list-preview.kzwolenik.com",
+					"pattern": "shopping-list.kzwolenik.com",
 					"custom_domain": true
 				}
 			],
