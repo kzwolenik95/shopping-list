@@ -4,7 +4,7 @@ const app = new Hono();
 
 app.get("/api/items", async (c) => {
   const db = c.env.DB;
-  const result = await db.prepare("SELECT * FROM shopping_items").all();
+  const result = await db.prepare("SELECT * FROM shoping_items").all();
   return c.json(result.results);
 });
 
@@ -12,7 +12,7 @@ app.post("/api/items", async (c) => {
   const { name } = await c.req.json();
   const db = c.env.DB;
   await db
-    .prepare("INSERT INTO shopping_items (name) VALUES (?)")
+    .prepare("INSERT INTO shoping_items (name) VALUES (?)")
     .bind(name)
     .run();
   return c.json({ success: true });
@@ -29,7 +29,7 @@ app.patch("/api/items/:id", async (c) => {
 
   // Dynamic SQL generation
   const setClause = fields.map((f) => `${f} = ?`).join(", ");
-  const query = `UPDATE shopping_items SET ${setClause} WHERE id = ?`;
+  const query = `UPDATE shoping_items SET ${setClause} WHERE id = ?`;
 
   const values = fields.map((f) => updateData[f]);
 
@@ -41,7 +41,7 @@ app.patch("/api/items/:id", async (c) => {
 app.delete("/api/items/:id", async (c) => {
   const id = c.req.param("id");
   const db = c.env.DB;
-  await db.prepare("DELETE FROM shopping_items WHERE id = ?").bind(id).run();
+  await db.prepare("DELETE FROM shoping_items WHERE id = ?").bind(id).run();
   return c.json({ success: true });
 });
 
