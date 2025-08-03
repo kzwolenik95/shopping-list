@@ -13,7 +13,7 @@ https://discord.cloudflare.com
 
 
 Create db:
-npx wrangler d1 create shoping-list-db
+npx wrangler d1 create shopping-list-db
 
 execure schema:
-npx wrangler d1 execute shoping-list-db --file=./schema.sql
+npx wrangler d1 execute shopping-list-db --file=./schema.sql
