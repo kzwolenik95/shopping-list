@@ -188,16 +188,33 @@ onMounted(() => {
                 </template>
                 <v-text-field v-if="editingItemId === item.id" v-model="editingName"
                   @keyup.enter="saveEdit(item, editingName)" @blur="saveEdit(item, editingName)" autofocus
-                  density="compact" />
+                  density="compact"/>
 
                 <v-list-item-title v-else :class="{ 'text-decoration-line-through': item.isDone }">
                   {{ item.name }}
                 </v-list-item-title>
 
                 <template v-slot:append>
-                  <v-btn icon="mdi-pencil" variant="text" color="primary" @click="startEdit(item)"
-                    v-if="editingItemId !== item.id"></v-btn>
-                  <v-btn icon="mdi-delete" variant="text" color="error" @click="removeItem(item)"></v-btn>
+                  <v-menu bottom left>
+                    <template v-slot:activator="{ props }">
+                      <v-btn icon v-bind="props" flat density="comfortable">
+                        <v-icon>mdi-dots-vertical</v-icon>
+                      </v-btn>
+                    </template>
+                    <v-list>
+                      <v-list-item @click="startEdit(item)">
+                        <v-list-item-icon>
+                          <v-icon>mdi-pencil</v-icon>
+                        </v-list-item-icon>
+                      </v-list-item>
+
+                      <v-list-item @click="removeItem(item)">
+                        <v-list-item-icon>
+                          <v-icon  color="error">mdi-delete</v-icon>
+                        </v-list-item-icon>
+                      </v-list-item>
+                    </v-list>
+                  </v-menu>
                 </template>
               </v-list-item>
             </v-list>
