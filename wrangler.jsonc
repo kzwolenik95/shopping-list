@@ -28,6 +28,7 @@
 	"env": {
 		"preview": {
 			"name": "shopping-list-preview",
+			"preview_urls": false,
 			"d1_databases": [
 				{
 					"binding": "DB",
@@ -47,6 +48,7 @@
 		},
 		"production": {
 			"name": "shopping-list-prod",
+			"preview_urls": false,
 			"d1_databases": [
 				{
 					"binding": "DB",
