@@ -1,1 +1,1 @@
-ALTER TABLE shopping_items ADD COLUMN user_space INTEGER NOT NULL;
+ALTER TABLE shopping_items ADD COLUMN user_space INTEGER NOT NULL DEFAULT 0;
